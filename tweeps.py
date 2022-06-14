@@ -9,6 +9,7 @@ db_name = os.environ['db_name']
 
 def insert(sql):
     conn = mysql.connector.connect(host=db_host,user=db_user,port=3306, password=db_pass,database=db_name)
+    # Create a cursor to execute the python file
     cursor = conn.cursor(dictionary=True,buffered=True)
     try:
         cursor.execute(sql)
